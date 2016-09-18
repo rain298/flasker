@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% import "_macros.html" as macros %}
+<meta charset="UTF-8">
+
+{% block title %}Flasky - {{ user.username }} {{ title }}{% endblock%}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>{{ user.username }} {{ title }}</h1>
+</div>
+<table class="table table-hover followers">
+    <thread><tr><th>用户</th><th>注册日期</th></tr></thread>
+    {% for follow in follows %}
+    {% if follow.user != user %}  <!--调整关注用户和被关注用户的列表，不显示自己-->
+    <tr>
+        <td>
+            <a href="{{ url_for('.user', username = follow.user.username) }}">
+                <img class="img-rounded" src="{{ follow.user.gravatar(size=32) }}">
+                {{ follow.user.username }}
+            </a>
+        </td>
+        <td>{{ moment(follow.timestamp).format('L') }}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+</table>
+<div class="pagination">
+    {{ macros.pagination_widget(pagination, endpoint, username = user.username) }}
+</div>
+{% endblock %}
