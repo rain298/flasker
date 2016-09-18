@@ -33,6 +33,10 @@ def create_app(config_name):  # 工厂函数，接收程序使用的配置名作
     db.init_app(app)
     pagedown.init_app(app)
 
+    if not app.debug and not app.testing and not app.config['SSL_DISABLE']:
+        from flask_sslify import SSLify
+        sslify = SSLify(app)
+
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
