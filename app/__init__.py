@@ -22,7 +22,7 @@ login_manager.login_view = 'auth.login'        # login_view属性设置登录页
 
 def create_app(config_name):  # 工厂函数，接收程序使用的配置名作为参数
     app = Flask(__name__)
-    app.config.from_object(config[config_name])  # 通过app.config配置对象的form_object方法直接导入配置
+    app.config.from_object(config[config_name])  
     app.config.setdefault('SQLALCHEMY_TRACK_MODIFICATIONS', True)
     config[config_name].init_app(app)  # 初始化配置
 
