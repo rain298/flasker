@@ -66,11 +66,11 @@ def profile(length=25, profile_dir=None):
 @manager.command
 def deploy():
     """Run deployment tasks."""
-    from flask_migrate import upgrade, migrate, init
+    from flask_migrate import upgrade, migrate
     from app.models import Role, User
 
     # 把数据库迁移到最新修订版本
-    init()
+    #init()
     migrate()
     upgrade()
 
