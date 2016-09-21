@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <p>亲爱的 {{ user.username }},</p>
-<p>感谢您注册我的个人小站，请点击 <a href="{{ url_for('auth.change_email', token=token, _external=True) }}">这里</a>确认你的邮件.</p>
-<p>当然您也可以将如下链接粘帖至您浏览器的地址栏并敲击回车:</p>
+<p>感谢您注册我的个人小站，请点击 <a href="{{ url_for('auth.change_email', token=token, _external=True) }}">这里</a>更改您的邮件.</p>
+<p>当然您也可以将如下链接粘帖至您浏览器的地址栏并敲击回车来更改邮件:</p>
 <p>{{ url_for('auth.change_email', token=token, _external=True) }}</p>
 <p>祝您生活愉快,身体健康,天气渐冷注意加衣,</p>
 <p>个人小站敬上。</p>
