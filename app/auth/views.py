@@ -60,7 +60,7 @@ def register():
         db.session.commit()
         token = user.generate_confirmation_token()
         send_email(user.email, u'确认您的账户', 'auth/email/confirm', user=user, token=token)
-        flash(u'一封确认邮件已发送至您的邮箱,请注意查收。')
+        flash(u'一封确认电子邮件已发送到您的邮箱，请注意查收，有效期1小时，或许Ta在您的垃圾箱中～')
         return redirect(url_for('auth.login'))
     return render_template('auth/register.html', form=form)
 

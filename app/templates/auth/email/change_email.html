@@ -1,8 +1,8 @@
 <meta charset="utf-8">
-<p>Dear {{ user.username }},</p>
-<p>To confirm your new email address <a href="{{ url_for('auth.change_email', token=token, _external=True) }}">click here</a>.</p>
-<p>Alternatively, your can paste the following link in your browse's address bar:</p>
+<p>亲爱的 {{ user.username }},</p>
+<p>感谢您注册我的个人小站，请点击 <a href="{{ url_for('auth.change_email', token=token, _external=True) }}">这里</a>确认你的邮件.</p>
+<p>当然您也可以将如下链接粘帖至您浏览器的地址栏并敲击回车:</p>
 <p>{{ url_for('auth.change_email', token=token, _external=True) }}</p>
-<p>Sincerly,</p>
-<p>The Flasky Team</p>
-<p><small>Note: replies to this email address are not monitored.</small></p>
+<p>祝您生活愉快,身体健康,天气渐冷注意加衣,</p>
+<p>个人小站敬上。</p>
+<p><small>注意：本邮件是系统发出的邮件，请勿直接回复。</small></p>
