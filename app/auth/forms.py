@@ -19,7 +19,7 @@ class LoginForm(Form):
 class RegistrationForm(Form):
     email = StringField(u'邮箱', validators=[DataRequired(), Length(1, 64), Email()])
     username = StringField(u'用户名', validators=[DataRequired(),Length(1, 64), Regexp('^[A-Za-z][A-Za-z0-9_.]*$', 0,
-                                                                      u'用户名只可以使用字母,数字，点或者下划线')])
+                                                                      u'用户名只可以使用字母、数字、点或者下划线')])
     password = PasswordField(u'密码', validators=[DataRequired(),
                                                      EqualTo('password2', message=u'您两次输入的密码不一致.')])
     password2 = PasswordField(u'确认密码', validators=[DataRequired()])

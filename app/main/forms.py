@@ -24,7 +24,7 @@ class EditProfileAdminForm(Form):
     email = StringField(u'邮箱', validators=[DataRequired(), Length(1, 64), Email()])
     username = StringField(u'用户名', validators=[DataRequired(),
                                                    Length(1, 64), Regexp('^[A-Za-z][A-Za-z0-9_.]*$', 0,
-                                                                      u'用户名只可以使用字母,数字，点或者下划线')])
+                                                                      u'用户名只可以使用字母、数字、点或者下划线')])
     confirmed = BooleanField(u'认证状态')
     role = SelectField(u'职位', coerce=int)  # WTForms对HTML表单控件<select>进行SelectField包装，从而实现下拉列表，用来在这个表单中选择用户角色
     name = StringField(u'真实姓名', validators=[Length(0, 64)])
